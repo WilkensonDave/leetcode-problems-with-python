@@ -1,0 +1,127 @@
+
+
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
+
+class LinkedList:
+    def __init__(self, value):
+        new_node = Node(value)
+        self.head = new_node
+        self.tail = new_node
+        self.length = 1
+    
+    
+    def print_node(self):
+        
+        if self.head == None:
+            return None
+        
+        current = self.head
+        while current:
+            print(current.value)
+            current = current.next
+    
+    def append(self, value):
+        
+        new_node = Node(value)
+        
+        if self.head == None:
+            self.head = new_node
+            self.tail = new_node
+        
+        else:
+            self.tail.next = new_node
+            self.tail = new_node
+        self.length += 1
+        return True
+    
+    def pop(self):
+        dummy = Node(0)
+        dummy.next = self.head
+        prev = dummy
+        current = self.head
+        
+        if self.head == None:
+            return None
+        
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+        
+        while current and current.next:
+            prev = prev.next
+            current = current.next
+        prev.next = None
+        self.tail = prev
+        self.length -= 1
+        return current
+    
+    def removeNth_node_from_end(self, n):
+        dummy = Node(0)
+        dummy.next = self.head
+        prev = dummy
+        temp = dummy
+        current = prev.next
+        
+        if n >= self.length or self.head is None:
+            return None
+        
+        if n < 0:
+            return None
+        
+        for _ in range(n+1):
+            temp = temp.next
+        
+        while temp:
+            prev = prev.next
+            temp = temp.next
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+        prev.next = prev.next.next
+        self.length -= 1
+        return dummy.next
+    
+    def swap_node_in_pairs(self):
+        
+        dummy = Node(0)
+        dummy.next = self.head
+        prev = dummy
+        current = prev.next
+        
+        if self.head is None:
+            return None
+        
+        while current and current.next:
+            to_move = current.next
+            current.next = to_move.next
+            to_move.next = prev.next
+            prev.next = to_move
+
+            prev = current
+            current = current.next
+        
+        self.head = dummy.next
+        return self.head
+            
+        
+        
+    
+list = LinkedList(1)
+
+list.append(2)
+list.append(3)
+list.append(4)
+list.append(5)
+list.append(6)
+
+# print("Removed node",list.pop())
+# print(list.removeNth_node_from_end(2))
+# print("************************")
+list.swap_node_in_pairs()
+list.print_node()
+            
+        
+        
