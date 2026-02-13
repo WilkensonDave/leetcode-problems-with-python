@@ -20,7 +20,7 @@ def replace_greatest_element(arr):
     rightMax = -1
     
     for i in range(len(arr)-1, -1, -1):
-        new_max = max(rightMax, arr[i])
+        new_max = max(arr[i], rightMax)
         arr[i] = rightMax
         rightMax = new_max
     return arr

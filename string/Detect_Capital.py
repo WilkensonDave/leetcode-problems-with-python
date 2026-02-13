@@ -18,17 +18,16 @@
 
 def detect_capital(word):
     
-    if word[0].upper() and word[1:].lower():
+    if word[0].isupper() and word[1:].islower():
         return True
     
-    if word.lower():
+    if  word.isupper():
         return True
     
-    if word.upper():
+    if word.islower():
         return True
     
-    else:
-        return False
+    return False
 
-word = "DAVE"
+word = "Google"
 print(detect_capital(word))

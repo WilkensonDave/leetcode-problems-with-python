@@ -13,11 +13,9 @@
 # Output: "lovely"
 
 def to_lower_string(s):
-    if len(s) == 0:
-        return None
-    
-    lower_letters = [char.lower() for char in s]
-    return "".join(lower_letters)
 
+    lowercases = [char.lower() for char in s]
+    return "".join(lowercases)
+    
 s = "Hello"
 print(to_lower_string(s))
