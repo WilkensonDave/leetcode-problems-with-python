@@ -35,19 +35,16 @@ class LinkedList:
         prev = None
         temp = self.head
         
-        if self.head is None:
-            return None
-        
         while temp:
             fast = temp.next
             temp.next = prev
             prev = temp
             temp = fast
-        
+            
         self.head = prev
         return self.head
             
-
+            
 my_linked_list = LinkedList(1)
 my_linked_list.append(3)
 my_linked_list.append(4)
