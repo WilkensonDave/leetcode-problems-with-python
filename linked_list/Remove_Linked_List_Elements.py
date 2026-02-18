@@ -54,15 +54,19 @@ class LinkedList:
         
         dummy = Node(0)
         dummy.next = self.head
-        temp = dummy
+        curr = dummy
         
-        while temp.next:
-            if temp.next.value == val:
-                temp.next = temp.next.next
+        while curr.next:
+            if curr.next.value == val:
+                curr.next = curr.next.next
+                
             else:
-                temp = temp.next
+                curr = curr.next
+        
         self.head = dummy.next
         return self.head
+        
+        
 
 
 my_linked_list = LinkedList(6)

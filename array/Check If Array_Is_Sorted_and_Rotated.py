@@ -33,7 +33,7 @@ def check_sorted_in_non_decreasing_and_rotate(nums):
 
     if nums[0] < nums[-1]:
         count += 1
-        
+    
     for i in range(1, len(nums)):
         if nums[i - 1] > nums[i]:
             count += 1
@@ -43,8 +43,9 @@ def check_sorted_in_non_decreasing_and_rotate(nums):
     
     else:
         return False
-    
-nums = [3,4,5,1,2]
+
+
+nums = [2,1,3,4]
 print(check_sorted_in_non_decreasing_and_rotate(nums))
 
  

@@ -33,12 +33,13 @@ def find_unique_character(s):
     for char in s:
         unique_char[char] = unique_char.get(char, 0) + 1
     
-    for index, char in enumerate(s):
-        if unique_char[char] == 1:
+    for index, c in enumerate(s):
+        if unique_char.get(c, 0) <= 1:
             return index
         
-    return - 1
+    return -1
+        
     
-s = "aabb"
+s = "leetcode"
 print(find_unique_character(s))
 

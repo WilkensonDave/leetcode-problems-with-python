@@ -26,9 +26,12 @@ def check_ransomNote(ransomNote, magazine):
     for char in ransomNote:
         if counts.get(char, 0) == 0:
             return False
-        counts[char] -= 1
         
+        else:
+            counts[char] -= 1
+            
     return True
+
 
 ransomNote = "aa"
 magazine = "aab"

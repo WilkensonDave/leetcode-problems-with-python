@@ -61,20 +61,21 @@ class LinkedList:
             index +=1
         curr.next = cycle_node
         
+        
     def detect_cycle(self):
         
         slow = self.head
         fast = self.head
-            
+        
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-           
+            
             if slow == fast:
-               return True
+                return True
+            
+        return False
 
-        else:
-            return False
         
 if __name__=="__main__":
     my_linked_list = LinkedList(3)
