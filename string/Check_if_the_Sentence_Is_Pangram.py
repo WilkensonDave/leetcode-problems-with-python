@@ -26,5 +26,6 @@ def check_pangram(sentence):
             return False
     return True
 
+
 sentence = "leetcode"
 print(check_pangram(sentence))

@@ -16,20 +16,21 @@
 
 
 def valid_palindrom(s):
-    
-    def valid_string(i, j):
+   
+    def check_substring(i, j):
         while i < j:
             if s[i] != s[j]:
                 return False
         return True
-    
+
     i, j = 0, len(s) - 1
+    
     while i < j:
         if s[i] != s[j]:
-            return valid_string(i+1, j) or valid_string(i, j-1)
+            return check_substring(i+1, j) or check_substring(i, j-1)
         i += 1
         j -= 1
     return True
             
-s = "aba"
+s = "abc"
 print(valid_palindrom(s))
