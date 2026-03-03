@@ -66,7 +66,8 @@ class LinkedList:
         self.head = dummy.next
         return self.head
         
-        
+
+
 
 
 my_linked_list = LinkedList(6)

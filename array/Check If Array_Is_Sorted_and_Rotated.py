@@ -27,25 +27,24 @@
 def check_sorted_in_non_decreasing_and_rotate(nums):
     
     count = 0
-    
-    if len(nums) == 0:
-        return None
 
     if nums[0] < nums[-1]:
         count += 1
     
+    j = 0
     for i in range(1, len(nums)):
-        if nums[i - 1] > nums[i]:
+        if nums[j] > nums[i]:
             count += 1
+        j += 1
     
     if count <= 1:
         return True
     
     else:
         return False
-
-
-nums = [2,1,3,4]
+        
+        
+nums = [1,2,3]
 print(check_sorted_in_non_decreasing_and_rotate(nums))
 
- 
+

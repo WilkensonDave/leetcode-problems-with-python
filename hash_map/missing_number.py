@@ -37,12 +37,12 @@
 
 def check_missing_number(nums):
     
-    if len(nums)  == 0:
+    if len(nums) == 0:
         return None
     
-    for n in range(len(nums) + 1):
-        if n not in nums:
-            return n
+    for num in range(len(nums)):
+        if num not in nums:
+            return num
 
 nums = [9,6,4,2,3,5,7,0,1]
 print(check_missing_number(nums))

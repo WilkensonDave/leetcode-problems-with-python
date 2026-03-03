@@ -32,19 +32,19 @@ t = "nagaram"
 #SOLUTION 2
 def detect_anagram2(s, t):
     
-    if len(s) != len(t):
-        return None
+    if len(t) != len(s) or len(t) == 0 or len(s) == 0:
+       return False
     
-    s_dict = {}
-    t_dict  ={}
+    s_count = {}
+    t_count = {}
     
     for char in s:
-        s_dict[char] = s_dict.get(char, 0) + 1
+        s_count[char] = s_count.get(char, 0) + 1
     
     for char in t:
-        t_dict[char] = t_dict.get(char, 0) + 1
+        t_count[char] = t_count.get(char, 0) + 1
     
-    if s_dict == t_dict:
+    if s_count == t_count:
         return True
     
     else:

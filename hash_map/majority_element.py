@@ -21,22 +21,21 @@ def check_majority(nums):
     middle =  n // 2
     return nums[middle]
 
-nums = [2,2,1,1,1,2,2]
+nums = [3,2,3]
 print(check_majority(nums))
 
 #solution 2
 def majority_element(nums):
-    if nums is None:
+    if len(nums) == 0:
         return None
-    
-    visited = {}
+    seen = {}
     
     for num in nums:
-        visited[num] = visited.get(num, 0) + 1
+        seen[num] = seen.get(num, 0) + 1
     
-    max_index = max(visited, key=visited.get)
-    return max_index
+    max_el = max(seen, key=seen.get)
+    return max_el
 
-nums = [2,2,1,1,1,2,2]
+nums = [3,2,3]
 print(majority_element(nums))
 

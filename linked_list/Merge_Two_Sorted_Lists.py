@@ -36,22 +36,22 @@ def merge_two_sorted_list(head1, head2):
     curr = dummy
     
     while head1 and head2:
-        if head1.value <= head2.value:
-            curr.next = head1
-            head1 = head1.next
-
-        else:
+        if head1.value >= head2.value:
             curr.next = head2
             head2 = head2.next
-            
+        
+        else:
+            curr.next = head1
+            head1 = head1.next
+        
         curr = curr.next
-    
-    if head1 is None:
+        
+    if not head1:
         curr.next = head2
     
     else:
         curr.next = head1
-        
+    
     return dummy.next
 
 def print_merge_list(curr):

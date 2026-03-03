@@ -21,16 +21,15 @@
 # Output: 1
 
 def find_single_number(nums):
-    seen = {}
-    
-    if len(nums) == 0:
-        return None
-    
+   
+    seen  = {}
+   
     for num in nums:
         seen[num] = seen.get(num, 0) + 1
     
-    minval = min(seen, key=seen.get)
-    return minval
+    min_val = min(seen, key=seen.get)
+    return min_val
+    
 
-nums = [4,1,2,1,2]
+nums = [2,2,1]
 print(find_single_number(nums))

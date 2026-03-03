@@ -18,20 +18,20 @@
 
 def check_ransomNote(ransomNote, magazine):
     
-    counts = {}
+    dict_magazine = {}
     
     for char in magazine:
-        counts[char] = counts.get(char, 0) + 1
+        dict_magazine[char] = dict_magazine.get(char, 0) + 1
+    
     
     for char in ransomNote:
-        if counts.get(char, 0) == 0:
+        if dict_magazine.get(char, 0) == 0:
             return False
-        
         else:
-            counts[char] -= 1
+            dict_magazine[char] -= 1
             
-    return True
-
+    return True   
+    
 
 ransomNote = "aa"
 magazine = "aab"

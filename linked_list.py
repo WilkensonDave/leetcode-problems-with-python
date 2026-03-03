@@ -278,24 +278,25 @@ class LinkedList:
         self.head = D1.next
     
     def reverse_between(self, start_index, end_index):
+        if self.head is None:
+            return  None
+        
         dummy = Node(0)
         dummy.next = self.head
-        prev = dummy
+        temp = dummy
         
-        if self.length <= 1:
-            return None
-        
-        for _ in range(start_index):
-            prev = prev.next
-        
-        current = prev.next
+        for _ in range(start_index - 1):
+            temp = temp.next
+            
+        current = temp.next
         for _ in range(0, end_index - start_index):
             to_move = current.next
             current.next = to_move.next
-            to_move.next = prev.next
-            prev.next = to_move
+            to_move.next = temp.next
+            temp.next = to_move
+            
         self.head = dummy.next
-        dummy.next = None
+        return self.head
         
         
         
@@ -386,13 +387,20 @@ def add_two_numbers(L1, L2):
 my_linked_list = LinkedList(1)
 my_linked_list.append(6)
 my_linked_list.append(4)
+my_linked_list.append(3)
+my_linked_list.append(2)
+my_linked_list.append(7)
 
 LinkedList1 = LinkedList(5)
 LinkedList1.append(8)
 LinkedList1.append(3)
 LinkedList1.append(2)
 
-add_two_numbers(my_linked_list, LinkedList1)
+my_linked_list.print_list()
+print("----------------------------")
+my_linked_list.reverse_between(2, 4)
+my_linked_list.print_list()
+# add_two_numbers(my_linked_list, LinkedList1)
 
 # my_linked_list.reverse()
 # print(my_linked_list.find_middle())
@@ -400,7 +408,7 @@ add_two_numbers(my_linked_list, LinkedList1)
 # my_linked_list.print_list()
 # my_linked_list.swap_nodes_in_pairs()
 # my_linked_list.partition_list(4)
-# my_linked_list.reverse_between(2, 4)
+
 
 #*************************************************************
 # print(my_linked_list.head.value)
@@ -422,9 +430,9 @@ add_two_numbers(my_linked_list, LinkedList1)
 
 # print('nth node from end is: ', find_kth_node_from_end( my_linked_list, 2).value)
 
-removed_kth_node_from_end(my_linked_list, 1)
+# removed_kth_node_from_end(my_linked_list, 1)
 
-my_linked_list.print_list()
+# my_linked_list.print_list()
 
 
 

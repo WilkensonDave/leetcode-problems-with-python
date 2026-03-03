@@ -42,23 +42,25 @@ class Implement_queue_with_stack:
             
         else:
             self.stack1.append(val)
+            
             while self.stack2:
                 self.stack1.append(self.stack2.pop())
-        
+
     def peek(self):
-        if len(self.stack1) == 0:
+        if self.empty():
             return None
         return self.stack1[-1]
     
     def pop(self):
-        if len(self.stack1) == 0:
+        if self.empty():
             return None
-        
         return self.stack1.pop()
     
     def empty(self):
-        return len(self.stack1) == 0
-
+        if len(self.stack1) == 0:
+            return True
+        return False
+    
 my_queue = Implement_queue_with_stack()
 my_queue.queue_with_stack(1)
 my_queue.queue_with_stack(5)
@@ -66,3 +68,8 @@ my_queue.queue_with_stack(8)
 my_queue.queue_with_stack(10)
 my_queue.queue_with_stack(12)
 print(my_queue.peek())
+print(my_queue.pop())
+print(my_queue.peek())
+
+
+
