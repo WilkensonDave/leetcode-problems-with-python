@@ -45,14 +45,13 @@ def task_scheduling(tasks, n):
     
     freq = Counter(tasks)
     maxFreq = max(freq.values())
+    all_max = sum(1 for f in freq.values() if f == maxFreq)
     
-    allMax = sum(1 for f in freq.values() if f == maxFreq)
-    
-    intervals = (maxFreq - 1) * (n + 1) + allMax
-    
-    return max(len(tasks), intervals)
+    intervals = (maxFreq -1) * (n + 1) + all_max
+    return intervals
 
-tasks = ["A","A","A","B","B","B"]
-n = 2
+tasks = ["A","A","A", "B","B","B"]
+n = 3
+
 
 print(task_scheduling(tasks, n))

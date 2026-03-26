@@ -18,19 +18,19 @@
 # Input: prices = [7,6,4,3,1]
 # Output: 0
 # Explanation: In this case, no transactions are done and the max profit = 0.
+
 def buy_and_sell_stoct(prices):
-    buy = prices[0]
     profit = 0
+    curr_buy = prices[0]
     
     for i in range(1, len(prices)):
+        if prices[i] < curr_buy:
+            curr_buy = prices[i]
         
-        if prices[i] < buy:
-            buy = prices[i]
-        
-        elif prices[i] - buy > profit:
-            profit = prices[i] - buy
-            
+        elif profit < prices[i] - curr_buy:
+            profit = prices[i] - curr_buy
     return profit
+            
 
-prices = [7,1,5,3,6,4]
+prices = [7,6,4,3,1]
 print(buy_and_sell_stoct(prices))

@@ -31,3 +31,31 @@
 # Input: pattern = "aaaa", s = "dog cat cat dog"
 
 # Output: false
+
+def word_pattern(pattern, s):
+    words = s.split()
+    
+    word_dict = {}
+    char_dict = {}
+    
+    for letter, word in zip(pattern, words):
+        if letter in char_dict:
+            if char_dict[letter] != word:
+                return False
+        else:
+            char_dict[letter] = word
+        
+        
+        if word in word_dict:
+            if word_dict[word] != letter:
+                return False
+        
+        else:
+            word_dict[word] = letter
+    
+    return True
+    
+    
+pattern = "abba"
+s = "dog cat cat dog"
+print(word_pattern(pattern, s))

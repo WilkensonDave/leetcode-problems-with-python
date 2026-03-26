@@ -16,3 +16,18 @@
 
 # Input: temperatures = [30,60,90]
 # Output: [1,1,0]
+
+def warm_temperatures(temperatures):
+    stack = []
+    res = [0] * len(temperatures)
+    
+    for i in range(len(temperatures)):
+        while stack and temperatures[i] > temperatures[stack[-1]]:
+            item = stack.pop()
+            res[item] = i - item
+        stack.append(i)
+        
+    return res
+
+temperatures = [30,40,50,60]
+print(warm_temperatures(temperatures))

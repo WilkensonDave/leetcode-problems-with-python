@@ -24,17 +24,14 @@ def check_ransomNote(ransomNote, magazine):
         dict_magazine[char] = dict_magazine.get(char, 0) + 1
     
     
-    for char in ransomNote:
-        if dict_magazine.get(char, 0) == 0:
+    for c in ransomNote:
+        if dict_magazine.get(c, 0) == 0:
             return False
-        else:
-            dict_magazine[char] -= 1
-            
-    return True   
+        dict_magazine[c] -= 1
     
-
+    return True
+    
 ransomNote = "aa"
-magazine = "aab"
+magazine = "ab"
 
 print(check_ransomNote(ransomNote, magazine))
-

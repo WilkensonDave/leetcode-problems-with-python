@@ -15,14 +15,14 @@
  
 
 def is_subsequence(s, t):
-    
     it = iter(t)
     
     for char in s:
-        if char not in it:
+        if char not in t:
             return False
     return True
-
+    
+    
 s = "abc"
 t = "ahbgdc"
 print(is_subsequence(s, t))

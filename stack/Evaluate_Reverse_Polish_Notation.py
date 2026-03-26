@@ -39,31 +39,29 @@ def Reverse_Polish_Notation(tokens):
     stack = []
     
     for token in tokens:
-        
+            
         if token == "+":
-            b = stack.pop()
-            a = stack.pop()
-            stack.append(a + b)
+            a = stack.pop(-2)
+            b = stack.pop(-1)
+            stack.append(a+b)
         
-        elif token == "-":
-            b = stack.pop()
-            a = stack.pop()
+        elif token == "-" and stack is not None:
+            a = stack.pop(-2)
+            b = stack.pop(-1)
             stack.append(a - b)
         
         elif token == "*":
-            b = stack.pop()
-            a = stack.pop()
+            a =  stack.pop(-2)
+            b = stack.pop(-1)
             stack.append(a * b)
         
         elif token == "/":
-            b = stack.pop()
-            a = stack.pop()
+            a = stack.pop(-2)
+            b = stack.pop(-1)
             stack.append(int(a / b))
-        
         else:
             stack.append(int(token))
-    
     return stack[0]
 
-tokens = ["10","6","9","3","+","-11","*","/","*","17","+","5","+"]
+tokens = ["4","13","5","/","+"]
 print(Reverse_Polish_Notation(tokens))
