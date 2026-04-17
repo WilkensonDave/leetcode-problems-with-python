@@ -5,7 +5,6 @@
 
 # Return the final string after all such duplicate removals have been made. It can be proven that the answer is unique.
 
-
 # Example 1:
 
 # Input: s = "abbaca"

@@ -19,18 +19,20 @@
 # Output: 0
 # Explanation: In this case, no transactions are done and the max profit = 0.
 
-def buy_and_sell_stoct(prices):
+def buy_and_sell_stock(prices):
     profit = 0
-    curr_buy = prices[0]
+    curr_price = prices[0]
     
-    for i in range(1, len(prices)):
-        if prices[i] < curr_buy:
-            curr_buy = prices[i]
-        
-        elif profit < prices[i] - curr_buy:
-            profit = prices[i] - curr_buy
-    return profit
-            
+    for i in range(1, len(prices)-1):
+        if prices[i] < curr_price:
+            curr_price = prices[i]
 
-prices = [7,6,4,3,1]
-print(buy_and_sell_stoct(prices))
+        elif profit < prices[i] - curr_price:
+            profit = prices[i] - curr_price
+    
+    return profit
+
+
+prices = [7,1,5,3,6,4]
+print(buy_and_sell_stock(prices))
+

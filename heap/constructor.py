@@ -1,21 +1,21 @@
 
-"""A head looks very simialr to a binary search tree"""
-"""A head is a binary seach tree, the only difference is the fact that the numbers in the BST
-are not distributed in the same way with head"""
+"""A heap looks very similar to a binary search tree"""
+"""A heap is a binary seach tree, the only difference is the fact that the numbers in the BST
+are not distributed in the same way with heap"""
 
-"""With a head each node has a number that is higher than all of its descendants
+"""With a heap each node has a number that is higher than all of its descendants
 which means the highest value will always be at the top"""
 
-"""A head is a complete binary search tree and when it's a perfect tree, its height is logn """
+"""A heap is a complete binary search tree and when it's a perfect tree, its height is logn """
 
-"""One of the things that make a head different from a head is the fact that you can have 
-duplicate in the head"""
+"""One of the things that make a heap different from a tree is the fact that you can have 
+duplicate in the heap"""
 
-"""We can have a max head with the max value at the top and a min head with the min value at the top"""
+"""We can have a max heap with the max value at the top and a min head with the min value at the top"""
 
 """heap are not good for searching."""
 
-"""The only thing you can use a head for is being able to keep track of a largest item at the top
+"""The only thing you can use a heap for is being able to keep track of a largest item at the top
 and be able to quickly remove it"""
 
 """There's a huge difference in how we store this tree versus how we stored our binary search tree"""
@@ -24,11 +24,11 @@ and be able to quickly remove it"""
 
 """The only thing the list will store is integers"""
 
-"""There are two commons ways of storing the  head in a list"""
+"""There are two commons ways of storing the  heap in a list"""
 
 #The first way is to store the first item at the index of zero
 
-"""From the perspective of storing the head in a list, the head supposed to be a complete tree
+"""From the perspective of storing the heap in a list, the heap supposed to be a complete tree
 In order to avoid any cap in the list"""
 #All the values in the list will be a contiguous range of numbers
 
@@ -48,8 +48,8 @@ the equation will be the following; right = 2 * parent_index + 1
 The index of the child node // 2  
 """
 
-#Insert a value into a head
-"""To insert a node into a head, we will always start out by inserting the value into the next open space
+#Insert a value into a heap
+"""To insert a node into a heap, we will always start out by inserting the value into the next open space
 the reason for this is because the tree needs to remain complete.
 ##############################################
 We need to bubble up the value to be inserted to the appropriate spot
@@ -62,7 +62,7 @@ We will move that new value to be inserted using a while loop and there are
 two conditionals that can break us out of the while loop.
 1) The first one is, if we reach the top of the head,
 once we reach the top, we want to stop running the while
-loop and then we'll have a valid head
+loop and then we'll have a valid heap
 
 ###There's another conditional that can break us out of a while loop as well
 2)if the value to be inserted is less than its parent we will break out of the loop
@@ -135,10 +135,6 @@ myheap.insert(55)
 myheap.insert(60)
 myheap.insert(50)
 myheap.insert(65)
-print(myheap.heap)
-myheap.remove()
-print(myheap.heap)
-myheap.remove()
 print(myheap.heap)
 # print(myheap.heap)
 # myheap.insert(100)
